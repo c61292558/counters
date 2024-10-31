@@ -21,6 +21,8 @@ jobs:
         run: |
           
           sudo apt-get update
+          sudo apt-get install libgirepository1.0-dev
+          sudo apt-get install libgtk-4-dev
           sudo apt-get install gir1.2-adw-1 libadwaita-1-0 libappstream-dev libgtk-4-dev gir1.2-gio-2.0-dev gir1.2-gtk-4.0-dev
           wget http://archive.ubuntu.com/ubuntu/pool/main/liba/libadwaita-1/libadwaita-1-dev_1.5.0-1ubuntu2_amd64.deb && sudo dpkg -i libadwaita-1-dev_1.5.0-1ubuntu2_amd64.deb
           sudo apt-get install -f -y ninja-build python3-pip valac  pkg-config # libadwaita-1-0 libadwaita-1-dev=1.5.0
