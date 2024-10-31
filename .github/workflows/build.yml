@@ -20,7 +20,7 @@ jobs:
         run: |
           # sudo add-apt-repository ppa:gnome3-team/gnome3  # 添加更新源
           sudo apt-get update
-          sudo apt-get install -y ninja-build python3-pip valac libadwaita-1-dev pkg-config libadwaita-1-0
+          sudo apt-get install -y ninja-build python3-pip valac libadwaita-1-dev=1.5.0 pkg-config # libadwaita-1-0
           pip3 install --upgrade meson
 
       - name: Configure project
