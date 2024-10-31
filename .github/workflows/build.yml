@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y ninja-build python3-pip valac  # 安装valac
+          sudo apt-get install -y ninja-build python3-pip valac libadwaita-1-dev pkg-config # 安装valac
           pip3 install --upgrade meson  # 使用pip安装最新版本的meson
 
       - name: Configure project
