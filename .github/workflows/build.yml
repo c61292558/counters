@@ -30,8 +30,8 @@ jobs:
             gir1.2-adw-1 \
             libadwaita-1-0 \
             libappstream-dev \
-            gir1.2-gio-2.0-dev \
-            gir1.2-gtk-4.0-dev \
+            gir1.2-gio-2.0 \
+            gir1.2-gtk-4.0 \
             ninja-build \
             python3-pip \
             valac \
