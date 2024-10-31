@@ -53,6 +53,7 @@ jobs:
           # Install GObject Introspection and Blueprint Compiler
           sudo apt-get install -y gobject-introspection
           sudo apt-get install -y blueprint-compiler
+          pkg-config --modversion libadwaita-1
 
       - name: Configure project
         run: meson . _build --prefix=$(pwd)/_install_dir
