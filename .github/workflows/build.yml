@@ -15,23 +15,43 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3
+        
       - name: Check wget version
         run: wget --version
+        
       - name: Install dependencies
         run: |
-          
           sudo apt-get update
-          sudo apt-get install libgirepository1.0-dev
-          sudo apt-get install libgtk-4-dev
-          sudo apt-get install gir1.2-adw-1 libadwaita-1-0 libappstream-dev libgtk-4-dev gir1.2-gio-2.0-dev gir1.2-gtk-4.0-dev
-          wget http://archive.ubuntu.com/ubuntu/pool/main/liba/libadwaita-1/libadwaita-1-dev_1.5.0-1ubuntu2_amd64.deb && sudo dpkg -i libadwaita-1-dev_1.5.0-1ubuntu2_amd64.deb
-          sudo apt-get install -f -y ninja-build python3-pip valac  pkg-config # libadwaita-1-0 libadwaita-1-dev=1.5.0
+          sudo apt-get install -y \
+            libgirepository1.0-dev \
+            libgtk-4-dev \
+            gir1.2-adw-1 \
+            libadwaita-1-0 \
+            libappstream-dev \
+            gir1.2-gio-2.0-dev \
+            gir1.2-gtk-4.0-dev \
+            ninja-build \
+            python3-pip \
+            valac \
+            pkg-config
 
+          # Install specific version of libadwaita if needed
+          # wget http://archive.ubuntu.com/ubuntu/pool/main/liba/libadwaita-1/libadwaita-1-dev_1.5.0-1ubuntu2_amd64.deb
+          # sudo dpkg -i libadwaita-1-dev_1.5.0-1ubuntu2_amd64.deb || echo "No such file, proceeding with other dependencies."
+          sudo apt-get install -f -y
+
+          # Upgrade meson
           pip3 install --upgrade meson
-          # sudo add-apt-repository ppa:gnome3-team/gnome3  # 添加更新源
+
+          # Install TypeScript (if necessary)
+          sudo apt-get install -y typescript
+
+          # Install GObject Introspection and Blueprint Compiler
+          sudo apt-get install -y gobject-introspection
+          sudo apt-get install -y blueprint-compiler
 
       - name: Configure project
-        run: meson . _build --prefix=$(pwd)/_install_dir  # 使用相对路径
+        run: meson . _build --prefix=$(pwd)/_install_dir
 
       - name: Build project
         run: ninja -C _build all
@@ -43,4 +63,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: built-files
-          path: _install_dir  # 指定生成文件的目录
+          path: _install_dir
