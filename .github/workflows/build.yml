@@ -18,10 +18,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo add-apt-repository ppa:ubuntu-desktop/ppa
+          sudo add-apt-repository ppa:gnome3-team/gnome3  # 添加更新源
           sudo apt-get update
-          sudo apt-get install -y ninja-build python3-pip valac libadwaita-1-dev pkg-config # 安装valac
-          pip3 install --upgrade meson  # 使用pip安装最新版本的meson
+          sudo apt-get install -y ninja-build python3-pip valac libadwaita-1-dev pkg-config
+          pip3 install --upgrade meson
 
       - name: Configure project
         run: meson . _build --prefix=$(pwd)/_install_dir  # 使用相对路径
