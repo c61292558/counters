@@ -1,0 +1,104 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $Gjs_Row : Adw.ActionRow {
+  selecting: bind template.root as <$Gjs_Window>.main-page as <$Gjs_MainPage>.selecting as <bool>;
+
+  selectable: bind template.selecting;
+  activatable: bind template.selecting inverted;
+
+  title: bind template.counter as <$Gjs_Counter>.title as <string>;
+  subtitle: bind template.counter as <$Gjs_Counter>.updated as <string>;
+
+  [prefix]
+  Box progressBox {
+    visible: bind template.selecting inverted;
+    valign: center;
+    halign: center;
+    margin-top: 3;
+    margin-start: 3;
+    margin-end: 3;
+    margin-bottom: 3;
+  }
+
+  [prefix]
+  CheckButton {
+    valign: center;
+    can-focus: false;
+    visible: bind template.selecting;
+    active: bind template.selected bidirectional;
+
+    styles [
+      "selection-mode"
+    ]
+  }
+
+  Box {
+    valign: center;
+    orientation: vertical;
+    margin-end: 8;
+
+    Box {
+      spacing: 2;
+      halign: end;
+
+      Label valueLabel {
+        valign: center;
+
+        label: bind template.counter as <$Gjs_Counter>.value as <string>;
+
+        styles [
+          "title-4",
+        ]
+      }
+
+      Label {
+        valign: center;
+
+        label: "/";
+        visible: bind goalLabel.visible;
+
+        styles [
+          "dim-label"
+        ]
+      }
+
+      Label goalLabel {
+        valign: center;
+
+        label: bind template.counter as <$Gjs_Counter>.goal as <string>;
+        visible: bind template.counter as <$Gjs_Counter>.goal as <bool>;
+
+        styles [
+          "dim-label"
+        ]
+      }
+    }
+
+  }
+
+  Button decreaseButton {
+    valign: center;
+    icon-name: 'value-decrease-symbolic';
+    visible: bind template.selecting inverted;
+    tooltip-text: _("Decrease");
+
+    styles [
+      "flat",
+      "circular",
+    ]
+  }
+
+  Button increaseButton {
+    valign: center;
+    icon-name: 'value-increase-symbolic';
+    visible: bind template.selecting inverted;
+    tooltip-text: _("Increase");
+
+    styles [
+      "flat",
+      "circular",
+    ]
+  }
+
+}

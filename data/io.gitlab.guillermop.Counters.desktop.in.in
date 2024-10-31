@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Counters
+Comment=A counter application
+Exec=counters
+Icon=@application_id@
+Terminal=false
+Type=Application
+Categories=Utility;GTK;GNOME;
+StartupNotify=true

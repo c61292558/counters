@@ -1,0 +1,100 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adjustment counterAdjustment {
+  lower: 0;
+  upper: 65535;
+  step-increment: 1;
+  page-increment: 10;
+}
+
+template $Gjs_Dialog : Adw.Dialog {
+  default-widget: saveButton;
+  height-request: 338;
+
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      show-end-title-buttons: false;
+      show-start-title-buttons: false;
+      Button closeButton {
+        label: _("Close");
+        clicked => $_onDeleteButtonClicked();
+
+        styles [
+          "flat",
+        ]
+      }
+
+      [end]
+      Button saveButton {
+        label: _("Save");
+        sensitive: bind template.valid;
+        receives-default: false;
+
+        clicked => $_onSaveButtonClicked();
+
+        styles [
+          "suggested-action",
+        ]
+      }
+    }
+    content:
+    ScrolledWindow {
+      propagate-natural-width: true;
+      propagate-natural-height: true;
+      child:
+      Adw.Clamp {
+        margin-start: 18;
+        margin-end: 18;
+        margin-top: 18;
+        margin-bottom: 18;
+
+        ListBox {
+          selection-mode: none;
+          valign: start;
+
+          Adw.EntryRow titleEntry {
+            title: _("Title");
+            activates-default: true;
+            changed => $_validateTitle();
+          }
+
+          Adw.ComboRow intervalCombo {
+            title: _("Interval");
+            model:
+            StringList {
+              strings [
+                _("Daily"),
+                _("Weekly"),
+                _("Monthly"),
+                _("Yearly"),
+                _("Lifetime"),
+              ]
+            }
+            ;
+
+            notify::selected => $_onIntervalSelectedNotify();
+          }
+
+          $Gjs_DaysRow daysRow {
+            notify::value => $_validateDays();
+          }
+
+          Adw.SpinRow goalSpin {
+            title: _("Goal");
+            adjustment: counterAdjustment;
+            value: 1;
+          }
+
+          styles [
+            "boxed-list",
+          ]
+        }
+      }
+
+      ;
+    }
+    ;
+  }
+}

@@ -1,0 +1,49 @@
+using Gtk 4.0;
+
+ShortcutsWindow help_overlay {
+  modal: true;
+
+  ShortcutsSection {
+    section-name: "shortcuts";
+    max-height: 10;
+
+    ShortcutsGroup {
+      title: _("General");
+
+      ShortcutsShortcut {
+        title: _("Show/Hide Sidebar");
+        accelerator: "F9";
+      }
+
+      ShortcutsShortcut {
+        title: _("Show/Hide Action Menu");
+        accelerator: "F10";
+      }
+
+      ShortcutsShortcut {
+        title: _("Add Counter");
+        action-name: "win.add";
+      }
+
+      ShortcutsShortcut {
+        title: _("Select All");
+        action-name: "win.select-all";
+      }
+
+      ShortcutsShortcut {
+        title: _("Show Shortcuts");
+        action-name: "win.show-help-overlay";
+      }
+
+      ShortcutsShortcut {
+        title: _("Close Window");
+        action-name: "window.close";
+      }
+
+      ShortcutsShortcut {
+        title: _("Quit");
+        action-name: "app.quit";
+      }
+    }
+  }
+}

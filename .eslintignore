@@ -1,0 +1,7 @@
+/types/**
+/gi-types/**
+.eslintrc.js
+_build/
+node_modules/
+*.js
+*/*.js

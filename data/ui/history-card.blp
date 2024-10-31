@@ -1,0 +1,88 @@
+using Gtk 4.0;
+
+template $Gjs_HistoryCard : Gtk.Box {
+  orientation: vertical;
+  valign: start;
+  spacing: 18;
+  notify::interval => $_onIntervalNotify();
+  notify::counter => $_onCounterNotify();
+
+  Box {
+    margin-end: 18;
+    margin-start: 18;
+    margin-top: 18;
+    valign: center;
+
+    Label {
+      halign: start;
+      hexpand: true;
+      label: _("History");
+
+      styles [
+        "title-3"
+      ]
+    }
+
+    Gtk.DropDown dropDown {
+      model: StringList {
+        strings [
+          _("Day"),
+          _("Week"),
+          _("Month"),
+          _("Year")
+        ]
+      };
+      selected: bind template.interval bidirectional;
+
+      styles ["flat"]
+
+    }
+  }
+
+  Box {
+    halign: fill;
+    margin-start: 18;
+    margin-end: 18;
+
+    Button previousButton{
+      tooltip-text: _("Previous");
+      icon-name: "go-previous-symbolic";
+
+      clicked => $_onPreviousButtonClicked();
+
+      styles [
+        "flat"
+      ]
+    }
+
+    Label dateRangeLabel {
+      hexpand: true;
+      halign: center;
+    }
+
+    Button nextButton {
+      tooltip-text: _("Next");
+      halign: end;
+      icon-name: "go-next-symbolic";
+      sensitive: bind template.page;
+
+      clicked => $_onNextButtonClicked();
+
+
+      styles [
+        "flat"
+      ]
+    }
+  }
+
+  $Gjs_Chart chart {
+    content-height: 240;
+    content-width: 320;
+    hexpand: true;
+  }
+
+  styles [
+    "card"
+  ]
+
+}

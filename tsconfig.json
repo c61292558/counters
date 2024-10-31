@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2021"],
+    "target": "ES2020",
+    "module": "ES2020",
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictPropertyInitialization": false,
+    "allowJs": true,
+    "checkJs": true,
+    "outDir": "_build/tsc-out/",
+    "moduleResolution": "node",
+    "baseUrl": "./src/",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "*": ["*", "types/*", "gi-types/*"]
+    },
+    "typeRoots": ["gi-types", "types"]
+  },
+  "include": ["src/**/*.ts", "types/gi.d.ts", "types/ambient.d.ts"]
+}

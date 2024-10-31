@@ -1,0 +1,398 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-26 11:11-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/io.gitlab.guillermop.Counters.appdata.xml.in.in:4
+#: data/io.gitlab.guillermop.Counters.desktop.in.in:3 data/ui/inner-page.blp:5
+#: data/ui/main-page.blp:5
+msgid "Counters"
+msgstr ""
+
+#: data/io.gitlab.guillermop.Counters.appdata.xml.in.in:5
+#: data/io.gitlab.guillermop.Counters.desktop.in.in:4
+msgid "A counter application"
+msgstr ""
+
+#: data/io.gitlab.guillermop.Counters.appdata.xml.in.in:9
+msgid "Simple counter application."
+msgstr ""
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:12
+msgid "Window width"
+msgstr ""
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:13
+msgid "Default window width."
+msgstr ""
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:17
+msgid "Window height"
+msgstr ""
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:18
+msgid "Default window height."
+msgstr ""
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:22
+msgid "Window maximized"
+msgstr ""
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:23
+msgid "Default window maximized state."
+msgstr ""
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:27
+msgid "Selected category"
+msgstr ""
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:28
+msgid "Last selected category."
+msgstr ""
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:32
+msgid "Sorting order"
+msgstr ""
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:33
+msgid "Sorting order of the rows."
+msgstr ""
+
+#: data/ui/days-row.blp:16
+msgid "Days of the week"
+msgstr ""
+
+#. Translators: toggle for Sunday
+#: data/ui/days-row.blp:26
+msgctxt "Sunday"
+msgid "S"
+msgstr ""
+
+#: data/ui/days-row.blp:27
+msgid "Sunday"
+msgstr ""
+
+#. Translators: toggle for Monday
+#: data/ui/days-row.blp:37
+msgctxt "Monday"
+msgid "M"
+msgstr ""
+
+#: data/ui/days-row.blp:38
+msgid "Monday"
+msgstr ""
+
+#. Translators: toggle for Tuesday
+#: data/ui/days-row.blp:48
+msgctxt "Tuesday"
+msgid "T"
+msgstr ""
+
+#: data/ui/days-row.blp:49
+msgid "Tuesday"
+msgstr ""
+
+#. Translators: toggle for Wednesday
+#: data/ui/days-row.blp:59
+msgctxt "Wednesday"
+msgid "W"
+msgstr ""
+
+#: data/ui/days-row.blp:60
+msgid "Wednesday"
+msgstr ""
+
+#. Translators: toggle for Thursday
+#: data/ui/days-row.blp:70
+msgctxt "Thursday"
+msgid "T"
+msgstr ""
+
+#: data/ui/days-row.blp:71
+msgid "Thursday"
+msgstr ""
+
+#. Translators: toggle for Friday
+#: data/ui/days-row.blp:81
+msgctxt "Friday"
+msgid "F"
+msgstr ""
+
+#: data/ui/days-row.blp:82
+msgid "Friday"
+msgstr ""
+
+#: data/ui/days-row.blp:91
+msgctxt "Saturday"
+msgid "S"
+msgstr ""
+
+#: data/ui/days-row.blp:92
+msgid "Saturday"
+msgstr ""
+
+#: data/ui/dialog.blp:21
+msgid "Close"
+msgstr ""
+
+#: data/ui/dialog.blp:31
+msgid "Save"
+msgstr ""
+
+#: data/ui/dialog.blp:58
+msgid "Title"
+msgstr ""
+
+#: data/ui/dialog.blp:64
+msgid "Interval"
+msgstr ""
+
+#: data/ui/dialog.blp:68
+msgid "Daily"
+msgstr ""
+
+#: data/ui/dialog.blp:69
+msgid "Weekly"
+msgstr ""
+
+#: data/ui/dialog.blp:70
+msgid "Monthly"
+msgstr ""
+
+#: data/ui/dialog.blp:71
+msgid "Yearly"
+msgstr ""
+
+#: data/ui/dialog.blp:72
+msgid "Lifetime"
+msgstr ""
+
+#: data/ui/dialog.blp:85
+msgid "Goal"
+msgstr ""
+
+#: data/ui/help-overlay.blp:11
+msgid "General"
+msgstr ""
+
+#: data/ui/help-overlay.blp:14
+msgid "Show/Hide Sidebar"
+msgstr ""
+
+#: data/ui/help-overlay.blp:19
+msgid "Show/Hide Action Menu"
+msgstr ""
+
+#: data/ui/help-overlay.blp:24
+msgid "Add Counter"
+msgstr ""
+
+#: data/ui/help-overlay.blp:29
+msgid "Select All"
+msgstr ""
+
+#: data/ui/help-overlay.blp:34
+msgid "Show Shortcuts"
+msgstr ""
+
+#: data/ui/help-overlay.blp:39
+msgid "Close Window"
+msgstr ""
+
+#: data/ui/help-overlay.blp:44
+msgid "Quit"
+msgstr ""
+
+#: data/ui/history-card.blp:19
+msgid "History"
+msgstr ""
+
+#: data/ui/history-card.blp:29
+msgid "Day"
+msgstr ""
+
+#: data/ui/history-card.blp:30
+msgid "Week"
+msgstr ""
+
+#: data/ui/history-card.blp:31
+msgid "Month"
+msgstr ""
+
+#: data/ui/history-card.blp:32
+msgid "Year"
+msgstr ""
+
+#: data/ui/history-card.blp:48
+msgid "Previous"
+msgstr ""
+
+#: data/ui/history-card.blp:64
+msgid "Next"
+msgstr ""
+
+#: data/ui/inner-page.blp:24 data/ui/main-page.blp:175
+msgid "Delete"
+msgstr ""
+
+#: data/ui/inner-page.blp:31
+msgid "Edit"
+msgstr ""
+
+#: data/ui/inner-page.blp:58 data/ui/row.blp:84
+msgid "Decrease"
+msgstr ""
+
+#: data/ui/inner-page.blp:87 data/ui/row.blp:96
+msgid "Increase"
+msgstr ""
+
+#: data/ui/inner-page.blp:136
+msgid "Best Streak"
+msgstr ""
+
+#: data/ui/inner-page.blp:142
+msgid "Current Streak"
+msgstr ""
+
+#: data/ui/inner-page.blp:151
+msgid "Completions"
+msgstr ""
+
+#: data/ui/inner-page.blp:157
+msgid "Completion Rate"
+msgstr ""
+
+#: data/ui/main-page.blp:35
+msgid "Menu"
+msgstr ""
+
+#: data/ui/main-page.blp:112
+msgid "Select items"
+msgstr ""
+
+#: data/ui/main-page.blp:122
+msgid "Toggle sidebar"
+msgstr ""
+
+#: data/ui/main-page.blp:129 data/ui/main-page.blp:212
+msgid "Add counter"
+msgstr ""
+
+#: data/ui/main-page.blp:138
+msgid "Sort by"
+msgstr ""
+
+#: data/ui/main-page.blp:146
+msgid "Select"
+msgstr ""
+
+#: data/ui/main-page.blp:153
+msgid "Cancel"
+msgstr ""
+
+#: data/ui/main-page.blp:184
+msgid "Search"
+msgstr ""
+
+#: data/ui/main-page.blp:197
+msgid "Search..."
+msgstr ""
+
+#: data/ui/main-page.blp:208
+msgid "No counters"
+msgstr ""
+
+#: data/ui/main-page.blp:209
+msgid "Use the button below to create a new counter"
+msgstr ""
+
+#: data/ui/main-page.blp:231
+msgid "No results found"
+msgstr ""
+
+#: data/ui/main-page.blp:232
+msgid "Try a different search"
+msgstr ""
+
+#: data/ui/main-page.blp:262
+msgid "In Progress"
+msgstr ""
+
+#: data/ui/main-page.blp:286
+msgid "Completed"
+msgstr ""
+
+#: data/ui/main-page.blp:333 data/ui/preferences.blp:8
+msgid "Preferences"
+msgstr ""
+
+#: data/ui/main-page.blp:338
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: data/ui/main-page.blp:343
+msgid "About Counters"
+msgstr ""
+
+#: data/ui/main-page.blp:352
+msgid "A-Z"
+msgstr ""
+
+#: data/ui/main-page.blp:358
+msgid "Z-A"
+msgstr ""
+
+#: data/ui/main-page.blp:364
+msgid "Oldest First"
+msgstr ""
+
+#: data/ui/main-page.blp:370
+msgid "Newest First"
+msgstr ""
+
+#: data/ui/main-page.blp:379
+msgid "Select all"
+msgstr ""
+
+#: data/ui/main-page.blp:384
+msgid "Select none"
+msgstr ""
+
+#: data/ui/preferences.blp:11
+msgid "Export / Import"
+msgstr ""
+
+#: data/ui/preferences.blp:15
+msgid "Export"
+msgstr ""
+
+#: data/ui/preferences.blp:18
+msgid "Export data"
+msgstr ""
+
+#: data/ui/preferences.blp:19 data/ui/preferences.blp:38
+msgid "A CSV file, compatible with BetterCounter"
+msgstr ""
+
+#: data/ui/preferences.blp:34 data/ui/preferences.blp:54
+msgid "Import"
+msgstr ""
+
+#: data/ui/preferences.blp:37
+msgid "Import data"
+msgstr ""

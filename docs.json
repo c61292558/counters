@@ -1,0 +1,18 @@
+{
+  "options": {
+    "inferGenerics": true,
+    "promisify": true,
+    "versionedImports": true,
+    "versionedOutput": true,
+    "out": "./gi-types"
+  },
+  "libraries": {
+    "Adw": ["1"],
+    "Counters": ["1"],
+    "Gdk": ["4.0"],
+    "Gio": ["2.0"],
+    "GLib": ["2.0"],
+    "GObject": ["2.0"],
+    "Gtk": ["4.0"]
+  }
+}

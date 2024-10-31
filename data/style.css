@@ -1,0 +1,16 @@
+label.counter {
+  font-size: 4em;
+}
+
+levelbar block.completed {
+  background-color: @success_bg_color;
+}
+
+dropdown.flat button {
+  background: @view-bg-color;
+}
+
+.sidebar-label,
+.sidebar-icon {
+  opacity: 0.7;
+}

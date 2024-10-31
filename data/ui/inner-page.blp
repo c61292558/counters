@@ -1,0 +1,184 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $Gjs_InnerPage : Adw.NavigationPage {
+  title: _("Counters");
+  tag: 'inner-page';
+
+  notify::counter => $_onCounterNotify();
+
+  child:
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [title]
+      Adw.WindowTitle title {
+        title: bind template.counter as <$Gjs_Counter>.title as <string>;
+        subtitle: bind $_subtitleClosure(template.counter as <$Gjs_Counter>.interval as <int>) as <string>;
+
+      }
+
+      [end]
+      Button deleteButton {
+        icon-name: 'user-trash-symbolic';
+        tooltip-text: _("Delete");
+        clicked => $_onDeleteButtonClicked();
+      }
+
+      [end]
+      Button editButton {
+        icon-name: 'document-edit-symbolic';
+        tooltip-text: _("Edit");
+        clicked => $_onEditButtonClicked();
+      }
+
+    }
+    content:
+    ScrolledWindow {
+      child:
+      Adw.Clamp {
+        margin-start: 18;
+        margin-end: 18;
+        margin-top: 18;
+        margin-bottom: 18;
+        Box {
+          orientation: vertical;
+          spacing: 18;
+          valign: start;
+
+          Box {
+            orientation: horizontal;
+            spacing: 8;
+
+            Button {
+              height-request: 32;
+              width-request: 32;
+              valign: center;
+              icon-name: 'list-remove-symbolic';
+              tooltip-text: _("Decrease");
+              clicked => $_onDecreaseButtonClicked();
+
+              styles [
+                "circular",
+              ]
+            }
+
+            Box {
+              hexpand: true;
+              halign: center;
+              spacing: 6;
+
+              Label counterLabel {
+                label: bind template.counter as <$Gjs_Counter>.value as <string>;
+                styles [
+                  "counter",
+                ]
+              }
+
+              GestureClick gestureClick {
+              }
+            }
+
+            Button {
+              height-request: 32;
+              width-request: 32;
+              valign: center;
+              icon-name: 'list-add-symbolic';
+              tooltip-text: _("Increase");
+              clicked => $_onIncreaseButtonClicked();
+
+              styles [
+                "circular",
+              ]
+            }
+
+          }
+
+          Box progressBox {
+            visible: bind template.counter as <$Gjs_Counter>.goal as <bool>;
+            orientation: vertical;
+            spacing: 6;
+            halign: fill;
+            hexpand: true;
+
+            LevelBar levelBar {
+              hexpand: true;
+              min-value: 0;
+              max-value: bind template.counter as <$Gjs_Counter>.goal as <int>;
+              value: bind $_valueClosure(template.counter as <$Gjs_Counter>.value as <int>) as <int>;
+
+              mode: continuous;
+              notify::max-value => $_updateLevelBarOffsets();
+            }
+            Label progressLabel {
+              label: bind $_progressClosure(
+                template.counter as <$Gjs_Counter>.value as <int>,
+                template.counter as <$Gjs_Counter>.goal as <int>) as <string>;
+              halign: center;
+
+              styles [
+                "dim-label"
+              ]
+            }
+          }
+
+          Box valuesBox {
+            visible: bind $_visibilityClosure(
+              template.counter as <$Gjs_Counter>.interval as <int>,
+              template.counter as <$Gjs_Counter>.goal as <int>) as <bool>;
+            homogeneous: true;
+            spacing: 12;
+
+            Adw.PreferencesGroup {
+              hexpand: true;
+              Adw.ActionRow bestStreakRow {
+                icon-name: "trophy-symbolic";
+                title: _("Best Streak");
+                styles ["property"]
+              }
+
+              Adw.ActionRow currentStreakRow {
+                icon-name: "fire2-symbolic";
+                title: _("Current Streak");
+                styles ["property"]
+              }
+            }
+
+            Adw.PreferencesGroup {
+              hexpand: true;
+              Adw.ActionRow completionsRow {
+                icon-name: "check-round-outline2-symbolic";
+                title: _("Completions");
+                styles ["property"]
+              }
+
+              Adw.ActionRow completionRateRow {
+                icon-name: "graph-symbolic";
+                title: _("Completion Rate");
+                styles ["property"]
+              }
+
+            }
+
+          }
+
+          $Gjs_HistoryCard historyCard {
+            counter: bind template.counter;
+          }
+
+
+        }
+
+      }
+
+      ;
+    }
+
+    ;
+  }
+
+  ;
+
+  hiding => $_onHidden();
+
+}

@@ -1,0 +1,22 @@
+{
+  "name": "counters",
+  "version": "1.0.0",
+  "license": "GPL-3.0-or-later",
+  "private": "true",
+  "devDependencies": {
+    "@gi.ts/cli": "^1.5.10",
+    "@gi.ts/lib": "^1.5.13",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint": "^8.21.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.3"
+  },
+  "scripts": {
+    "clean": "rm -rf ./_build/tsc-out",
+    "build": "yarn clean && tsc --strict",
+    "typecheck": "tsc --strict --noEmit",
+    "generate-types": "gi-ts generate"
+  }
+}

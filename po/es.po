@@ -1,0 +1,398 @@
+#
+#  <>, 2023-2024.
+# Guillermo Peña <guillerm0p@keemail.me>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: counters 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-26 11:11-0700\n"
+"PO-Revision-Date: 2024-10-26 11:39-0700\n"
+"Last-Translator: Guillermo Peña <guillerm0p@keemail.me>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 46.1\n"
+
+#: data/io.gitlab.guillermop.Counters.appdata.xml.in.in:4
+#: data/io.gitlab.guillermop.Counters.desktop.in.in:3 data/ui/inner-page.blp:5
+#: data/ui/main-page.blp:5
+msgid "Counters"
+msgstr "Counters"
+
+#: data/io.gitlab.guillermop.Counters.appdata.xml.in.in:5
+#: data/io.gitlab.guillermop.Counters.desktop.in.in:4
+msgid "A counter application"
+msgstr "Una aplicación contadora"
+
+#: data/io.gitlab.guillermop.Counters.appdata.xml.in.in:9
+msgid "Simple counter application."
+msgstr "Simple aplicación contadora."
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:12
+msgid "Window width"
+msgstr "Anchura de la ventana"
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:13
+msgid "Default window width."
+msgstr "Anchura predeterminada de la ventana."
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:17
+msgid "Window height"
+msgstr "Altura de la ventana"
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:18
+msgid "Default window height."
+msgstr "Altura predeterminada de la ventana."
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:22
+msgid "Window maximized"
+msgstr "Ventana maximizada"
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:23
+msgid "Default window maximized state."
+msgstr "Estado maximizado predeterminado de la ventana."
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:27
+msgid "Selected category"
+msgstr "Categoría seleccionada"
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:28
+msgid "Last selected category."
+msgstr "Última categoría seleccionada"
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:32
+msgid "Sorting order"
+msgstr "Criterio de ordenación"
+
+#: data/io.gitlab.guillermop.Counters.gschema.xml.in:33
+msgid "Sorting order of the rows."
+msgstr "Criterio de ordenación de las filas."
+
+#: data/ui/days-row.blp:16
+msgid "Days of the week"
+msgstr "Días de la semana"
+
+#. Translators: toggle for Sunday
+#: data/ui/days-row.blp:26
+msgctxt "Sunday"
+msgid "S"
+msgstr "D\t"
+
+#: data/ui/days-row.blp:27
+msgid "Sunday"
+msgstr "Domingo"
+
+#. Translators: toggle for Monday
+#: data/ui/days-row.blp:37
+msgctxt "Monday"
+msgid "M"
+msgstr "L"
+
+#: data/ui/days-row.blp:38
+msgid "Monday"
+msgstr "Lunes"
+
+#. Translators: toggle for Tuesday
+#: data/ui/days-row.blp:48
+msgctxt "Tuesday"
+msgid "T"
+msgstr "M"
+
+#: data/ui/days-row.blp:49
+msgid "Tuesday"
+msgstr "Martes"
+
+#. Translators: toggle for Wednesday
+#: data/ui/days-row.blp:59
+msgctxt "Wednesday"
+msgid "W"
+msgstr "X"
+
+#: data/ui/days-row.blp:60
+msgid "Wednesday"
+msgstr "Miércoles"
+
+#. Translators: toggle for Thursday
+#: data/ui/days-row.blp:70
+msgctxt "Thursday"
+msgid "T"
+msgstr "J"
+
+#: data/ui/days-row.blp:71
+msgid "Thursday"
+msgstr "Jueves"
+
+#. Translators: toggle for Friday
+#: data/ui/days-row.blp:81
+msgctxt "Friday"
+msgid "F"
+msgstr "V"
+
+#: data/ui/days-row.blp:82
+msgid "Friday"
+msgstr "Viernes"
+
+#: data/ui/days-row.blp:91
+msgctxt "Saturday"
+msgid "S"
+msgstr "S"
+
+#: data/ui/days-row.blp:92
+msgid "Saturday"
+msgstr "Sábado"
+
+#: data/ui/dialog.blp:21
+msgid "Close"
+msgstr "Cerrar"
+
+#: data/ui/dialog.blp:31
+msgid "Save"
+msgstr "Guardar"
+
+#: data/ui/dialog.blp:58
+msgid "Title"
+msgstr "Título"
+
+#: data/ui/dialog.blp:64
+msgid "Interval"
+msgstr "Intervalo"
+
+#: data/ui/dialog.blp:68
+msgid "Daily"
+msgstr "Diaro"
+
+#: data/ui/dialog.blp:69
+msgid "Weekly"
+msgstr "Semanal"
+
+#: data/ui/dialog.blp:70
+msgid "Monthly"
+msgstr "Mensual"
+
+#: data/ui/dialog.blp:71
+msgid "Yearly"
+msgstr "Anual"
+
+#: data/ui/dialog.blp:72
+msgid "Lifetime"
+msgstr "Sin fecha límite"
+
+#: data/ui/dialog.blp:85
+msgid "Goal"
+msgstr "Objectivo"
+
+#: data/ui/help-overlay.blp:11
+msgid "General"
+msgstr "General"
+
+#: data/ui/help-overlay.blp:14
+msgid "Show/Hide Sidebar"
+msgstr "Mostrar/ocultar barra lateral"
+
+#: data/ui/help-overlay.blp:19
+msgid "Show/Hide Action Menu"
+msgstr "Mostrar/ocultar el menú de acciones"
+
+#: data/ui/help-overlay.blp:24
+msgid "Add Counter"
+msgstr "Agregar contador"
+
+#: data/ui/help-overlay.blp:29
+msgid "Select All"
+msgstr "Seleccionar Todo"
+
+#: data/ui/help-overlay.blp:34
+msgid "Show Shortcuts"
+msgstr "Mostrar atajos"
+
+#: data/ui/help-overlay.blp:39
+msgid "Close Window"
+msgstr "Cerrar ventana"
+
+#: data/ui/help-overlay.blp:44
+msgid "Quit"
+msgstr "Salir"
+
+#: data/ui/history-card.blp:19
+msgid "History"
+msgstr "Historial"
+
+#: data/ui/history-card.blp:29
+msgid "Day"
+msgstr "Día"
+
+#: data/ui/history-card.blp:30
+msgid "Week"
+msgstr "Semana"
+
+#: data/ui/history-card.blp:31
+msgid "Month"
+msgstr "Mes"
+
+#: data/ui/history-card.blp:32
+msgid "Year"
+msgstr "Año"
+
+#: data/ui/history-card.blp:48
+msgid "Previous"
+msgstr "Anterior"
+
+#: data/ui/history-card.blp:64
+msgid "Next"
+msgstr "Siguiente"
+
+#: data/ui/inner-page.blp:24 data/ui/main-page.blp:175
+msgid "Delete"
+msgstr "Eliminar"
+
+#: data/ui/inner-page.blp:31
+msgid "Edit"
+msgstr "Editar"
+
+#: data/ui/inner-page.blp:58 data/ui/row.blp:84
+msgid "Decrease"
+msgstr "Reducir"
+
+#: data/ui/inner-page.blp:87 data/ui/row.blp:96
+msgid "Increase"
+msgstr "Aumentar"
+
+#: data/ui/inner-page.blp:136
+msgid "Best Streak"
+msgstr "Mejor Racha"
+
+#: data/ui/inner-page.blp:142
+msgid "Current Streak"
+msgstr "Racha Actual"
+
+#: data/ui/inner-page.blp:151
+msgid "Completions"
+msgstr "Completados"
+
+#: data/ui/inner-page.blp:157
+msgid "Completion Rate"
+msgstr "Porcentaje Completado"
+
+#: data/ui/main-page.blp:35
+msgid "Menu"
+msgstr "Menú"
+
+#: data/ui/main-page.blp:112
+msgid "Select items"
+msgstr "Seleccionar elementos"
+
+#: data/ui/main-page.blp:122
+msgid "Toggle sidebar"
+msgstr "Alternar barra lateral"
+
+#: data/ui/main-page.blp:129 data/ui/main-page.blp:212
+msgid "Add counter"
+msgstr "Agregar contador"
+
+#: data/ui/main-page.blp:138
+msgid "Sort by"
+msgstr "Ordenar por"
+
+#: data/ui/main-page.blp:146
+msgid "Select"
+msgstr "Seleccionar"
+
+#: data/ui/main-page.blp:153
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: data/ui/main-page.blp:184
+msgid "Search"
+msgstr "Buscar"
+
+#: data/ui/main-page.blp:197
+msgid "Search..."
+msgstr "Buscar..."
+
+#: data/ui/main-page.blp:208
+msgid "No counters"
+msgstr "Sin contadores"
+
+#: data/ui/main-page.blp:209
+msgid "Use the button below to create a new counter"
+msgstr "Use el botón para crear un contador nuevo"
+
+#: data/ui/main-page.blp:231
+msgid "No results found"
+msgstr "No se encontraron resultados"
+
+#: data/ui/main-page.blp:232
+msgid "Try a different search"
+msgstr "Intente una nueva búsqueda"
+
+#: data/ui/main-page.blp:262
+msgid "In Progress"
+msgstr "En curso"
+
+#: data/ui/main-page.blp:286
+msgid "Completed"
+msgstr "Completados"
+
+#: data/ui/main-page.blp:333 data/ui/preferences.blp:8
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: data/ui/main-page.blp:338
+msgid "Keyboard Shortcuts"
+msgstr "Atajos de teclado"
+
+#: data/ui/main-page.blp:343
+msgid "About Counters"
+msgstr "Acerca de Counters"
+
+#: data/ui/main-page.blp:352
+msgid "A-Z"
+msgstr "A-Z"
+
+#: data/ui/main-page.blp:358
+msgid "Z-A"
+msgstr "Z-A"
+
+#: data/ui/main-page.blp:364
+msgid "Oldest First"
+msgstr "Lo más antiguo primero"
+
+#: data/ui/main-page.blp:370
+msgid "Newest First"
+msgstr "Lo más nuevo primero"
+
+#: data/ui/main-page.blp:379
+msgid "Select all"
+msgstr "Seleccionar todo"
+
+#: data/ui/main-page.blp:384
+msgid "Select none"
+msgstr "No seleccionar nada"
+
+#: data/ui/preferences.blp:11
+msgid "Export / Import"
+msgstr "Exportar / Importar"
+
+#: data/ui/preferences.blp:15
+msgid "Export"
+msgstr "Exportar"
+
+#: data/ui/preferences.blp:18
+msgid "Export data"
+msgstr "Exportar datos"
+
+#: data/ui/preferences.blp:19 data/ui/preferences.blp:38
+msgid "A CSV file, compatible with BetterCounter"
+msgstr "Un archivo CSV, compatible con BetterCounter"
+
+#: data/ui/preferences.blp:34 data/ui/preferences.blp:54
+msgid "Import"
+msgstr "Importar"
+
+#: data/ui/preferences.blp:37
+msgid "Import data"
+msgstr "Importar datos"

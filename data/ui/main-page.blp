@@ -1,0 +1,387 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $Gjs_MainPage : Adw.NavigationPage {
+  title: _("Counters");
+  tag: "main";
+
+  notify::selecting => $_onSelectingChanged();
+
+
+  child:
+  Adw.BreakpointBin {
+    height-request: 248;
+    width-request: 360;
+
+    Adw.Breakpoint {
+      condition ("max-width: 600sp")
+
+      setters {
+        splitView.collapsed: true;
+      }
+    }
+
+    Adw.OverlaySplitView splitView {
+      sidebar:
+      Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar {
+          show-title: true;
+
+          [end]
+          MenuButton {
+            icon-name: 'open-menu-symbolic';
+            menu-model: primaryMenu;
+            tooltip-text: _("Menu");
+            primary: true;
+          }
+        }
+
+        content: ScrolledWindow {
+          child:
+          ListView listView {
+            vexpand: true;
+            can-focus: false;
+            factory:
+            BuilderListItemFactory list_item_factory {
+              template ListItem {
+                child:
+                Box {
+                  orientation: horizontal;
+                  spacing: 8;
+                  Image icon {
+                    icon-name: bind template.item as <$Gjs_Category>.icon-name;
+
+                    styles [
+                      "sidebar-icon"
+                    ]
+
+                  }
+                  Label title {
+                    halign: start;
+                    hexpand: true;
+                    ellipsize: end;
+                    label: bind template.item as <$Gjs_Category>.title;
+
+                    styles [
+                      "sidebar-label"
+                    ]
+                  }
+                }
+                ;
+              }
+            }
+            ;
+            model: bind template.root as <$Gjs_Window>.categories as <$Gjs_Categories>;
+            styles [
+              "navigation-sidebar",
+            ]
+          }
+
+          ;
+
+        }
+
+        ;
+
+      }
+      ;
+      content:
+      Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar headerBar {
+          [title]
+          Stack headerStack {
+            StackPage {
+              name: "default";
+              child:
+              Adw.WindowTitle windowTitle {
+                title: bind template.root as <$Gjs_Window>.categories as <$Gjs_Categories>.selected-item as <$Gjs_Category>.title as <string>;
+                subtitle: bind $_updateSubtitleClosure(
+                  template.root as <$Gjs_Window>.counters as <$Gjs_Counters>.completed as <int>,
+                  template.root as <$Gjs_Window>.counters as <$Gjs_Counters>.n-items as <int>)
+                  as <string>;
+              }
+              ;
+            }
+
+            StackPage {
+              name: "selection";
+              child:
+              MenuButton selectionButton {
+                label: _("Select items");
+                can-shrink: true;
+                menu-model: select-menu;
+              }
+              ;
+            }
+          }
+
+          ToggleButton sidebarButton {
+            icon-name: "sidebar-show-symbolic";
+            tooltip-text: _("Toggle sidebar");
+            visible: bind splitView.collapsed;
+            active: bind splitView.show-sidebar bidirectional;
+          }
+
+          Button addButton {
+            icon-name: 'list-add-symbolic';
+            tooltip-text: _("Add counter");
+            action-name: 'win.add';
+            visible: bind template.selecting inverted;
+          }
+
+          [end]
+          MenuButton {
+            icon-name: 'view-sort-descending-rtl-symbolic';
+            menu-model: sortMenu;
+            tooltip-text: _("Sort by");
+            visible: bind template.selecting inverted;
+          }
+
+          [end]
+          ToggleButton selectButton {
+            active: bind template.selecting bidirectional;
+            icon-name: "selection-mode-symbolic";
+            tooltip-text: _("Select");
+            visible: bind template.selecting inverted;
+            sensitive: bind template.root as <$Gjs_Window>.counters as <$Gjs_Counters>.n-items as <bool>;
+          }
+
+          [end]
+          Button cancelButton {
+            label: _("Cancel");
+            visible: bind template.selecting;
+            clicked => $_onCancelButtonClicked();
+
+            ShortcutController {
+              scope: managed;
+
+              Shortcut {
+                trigger: "Escape";
+                action: "signal(clicked)";
+              }
+            }
+
+            styles [
+              "flat",
+            ]
+
+          }
+
+          [end]
+          Button deleteButton {
+            icon-name: 'user-trash-symbolic';
+            tooltip-text: _("Delete");
+            visible: bind template.selecting;
+            sensitive: false;
+            clicked => $_onDeleteButtonClicked();
+          }
+
+          [end]
+          ToggleButton searchButton {
+            icon-name: "system-search-symbolic";
+            tooltip-text: _("Search");
+            sensitive: bind template.root as <$Gjs_Window>.counters as <$Gjs_Counters>.n-items as <bool>;
+          }
+
+        }
+
+        [top]
+        SearchBar searchBar {
+          key-capture-widget: template;
+          search-mode-enabled: bind searchButton.active no-sync-create bidirectional;
+          notify::search-mode-enabled => $_onSearchModeChanged();
+
+          SearchEntry searchEntry {
+            placeholder-text: _("Search...");
+          }
+        }
+
+        content:
+        Stack stack {
+          StackPage {
+            name: 'empty';
+            child:
+            Adw.StatusPage {
+              icon-name: 'io.gitlab.guillermop.Counters-symbolic';
+              title: _("No counters");
+              description: _("Use the button below to create a new counter");
+
+              Button {
+                label: _("Add counter");
+                halign: center;
+                action-name: 'win.add';
+
+                styles [
+                  "pill",
+                  "suggested-action",
+                ]
+              }
+            }
+
+            ;
+          }
+
+          StackPage {
+            name: 'empty-search';
+            child:
+            Adw.StatusPage {
+              icon-name: 'system-search-symbolic';
+              title: _("No results found");
+              description: _("Try a different search");
+            }
+            ;
+          }
+
+          StackPage {
+            name: 'default';
+            child:
+            ScrolledWindow {
+              hscrollbar-policy: never;
+              propagate-natural-height: true;
+
+              child:
+              Adw.Clamp {
+                margin-start: 18;
+                margin-end: 18;
+                margin-top: 18;
+                margin-bottom: 18;
+                Box {
+                  orientation: vertical;
+                  spacing: 24;
+
+                  Box inProgressSection {
+                    spacing: 12;
+                    orientation: vertical;
+
+                    visible: bind template.root as <$Gjs_Window>.counters as <$Gjs_Counters>.in-progress-model as <$Gjs_Model>.n-items as <bool>;
+
+                    Label {
+                      halign: start;
+                      label: _("In Progress");
+
+                      styles ["heading"]
+                    }
+
+                    $Gjs_ListBox inProgressListBox {
+                      valign: start;
+                      selection-mode: multiple;
+                      selected-rows-changed => $_onSelectedRowsChanged();
+                      row-activated => $_onRowActivated();
+                      styles [
+                        "boxed-list",
+                      ]
+                    }
+                  }
+
+                  Box completedSection {
+                    spacing: 12;
+                    orientation: vertical;
+
+                    visible: bind template.root as <$Gjs_Window>.counters as <$Gjs_Counters>.completed-model as <$Gjs_Model>.n-items as <bool>;
+
+                    Label {
+                      halign: start;
+                      label: _("Completed");
+
+                      styles ["heading"]
+                    }
+
+                    $Gjs_ListBox completedListBox {
+                      valign: start;
+                      selection-mode: multiple;
+                      selected-rows-changed => $_onSelectedRowsChanged();
+                      row-activated => $_onRowActivated();
+                      styles [
+                        "boxed-list",
+                      ]
+                    }
+                  }
+
+
+                }
+              }
+
+              ;
+
+            }
+
+            ;
+
+          }
+        }
+
+        ;
+
+      }
+
+      ;
+
+    }
+  }
+
+
+  ;
+
+}
+
+
+menu primaryMenu {
+  section {
+    item {
+      label: _("Preferences");
+      action: "app.preferences";
+    }
+
+    item {
+      label: _("Keyboard Shortcuts");
+      action: 'win.show-help-overlay';
+    }
+
+    item {
+      label: _("About Counters");
+      action: 'app.about';
+    }
+  }
+}
+
+menu sortMenu {
+  section {
+    item {
+      label: _("A-Z");
+      action: "win.sort-order";
+      target: "a-z";
+    }
+
+    item {
+      label: _("Z-A");
+      action: "win.sort-order";
+      target: "z-a";
+    }
+
+    item {
+      label: _("Oldest First");
+      action: "win.sort-order";
+      target: "oldest_first";
+    }
+
+    item {
+      label: _("Newest First");
+      action: "win.sort-order";
+      target: "newest_first";
+    }
+  }
+}
+
+menu select-menu {
+  item {
+    label: _("Select all");
+    action: "win.select-all";
+  }
+
+  item {
+    label: _("Select none");
+    action: "win.select-none";
+  }
+}

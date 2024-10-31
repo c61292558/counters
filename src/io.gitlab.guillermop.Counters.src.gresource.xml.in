@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/gitlab/guillermop/Counter@profile@/js">
+    <file>common/action.js</file>
+    <file>common/date_utils.js</file>
+    <file>common/decorators.js</file>
+    <file>common/interfaces.js</file>
+    <file>main.js</file>
+    <file>models/categories.js</file>
+    <file>models/category.js</file>
+    <file>models/counter.js</file>
+    <file>models/counters.js</file>
+    <file>models/entry.js</file>
+    <file>models/interval.js</file>
+    <file>models/settings.js</file>
+    <file>storage/builder.js</file>
+    <file>storage/database.js</file>
+    <file>widgets/chart.js</file>
+    <file>widgets/days_row.js</file>
+    <file>widgets/dialog.js</file>
+    <file>widgets/history_card.js</file>
+    <file>widgets/index.js</file>
+    <file>widgets/inner_page.js</file>
+    <file>widgets/list_box.js</file>
+    <file>widgets/main_page.js</file>
+    <file>widgets/preferences.js</file>
+    <file>widgets/progress_ring.js</file>
+    <file>widgets/row.js</file>
+    <file>widgets/window.js</file>
+  </gresource>
+</gresources>

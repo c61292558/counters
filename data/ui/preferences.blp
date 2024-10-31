@@ -1,0 +1,62 @@
+using Gtk 4.0;
+using Adw 1;
+
+
+template $Gjs_Preferences : Adw.PreferencesDialog {
+  content-width: 800;
+  content-height: 600;
+  title: _("Preferences");
+
+  Adw.PreferencesPage {
+    title: _("Export / Import");
+    icon-name: "document-save-as-symbolic";
+
+    Adw.PreferencesGroup {
+      title: _("Export");
+
+      Adw.ActionRow _export_row {
+        title: _("Export data");
+        subtitle: _("A CSV file, compatible with BetterCounter");
+        activatable: true;
+        sensitive: bind template.exporting inverted;
+
+        activated => $_onExportRowActivated();
+
+        [suffix]
+        Adw.Spinner {
+          visible: bind template.exporting;
+        }
+
+      }
+    }
+
+    Adw.PreferencesGroup {
+      title: _("Import");
+
+      Adw.ActionRow _import_row {
+        title: _("Import data");
+        subtitle: _("A CSV file, compatible with BetterCounter");
+        activatable: true;
+        sensitive: bind template.importing inverted;
+
+        activated => $_onImportRowActivated();
+
+        [suffix]
+        Adw.Spinner {
+          visible: bind template.importing;
+        }
+      }
+    }
+  }
+}
+
+Adw.NavigationPage _subpage {
+  title: _("Import");
+  can-pop: false;
+
+  Adw.StatusPage {
+    paintable: Adw.SpinnerPaintable {
+      widget: template;
+    };
+  }
+}

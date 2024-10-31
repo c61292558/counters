@@ -1,0 +1,100 @@
+using Gtk 4.0;
+
+template $Gjs_DaysRow : ListBoxRow {
+  activatable: false;
+
+  Box {
+    spacing: 8;
+    margin-start: 12;
+    margin-end: 12;
+    margin-top: 12;
+    margin-bottom: 12;
+    orientation: vertical;
+
+    Label {
+      halign: start;
+      label: _("Days of the week");
+    }
+
+    Box {
+      spacing: 4;
+      halign: center;
+
+      ToggleButton sunButton {
+        active: true;
+        // Translators: toggle for Sunday
+        label: C_("Sunday", "S");
+        tooltip-text: _("Sunday");
+
+        toggled => $_onButtonToggled();
+
+        styles ["circular"]
+      }
+
+      ToggleButton monButton {
+        active: true;
+        // Translators: toggle for Monday
+        label: C_("Monday", "M");
+        tooltip-text: _("Monday");
+
+        toggled => $_onButtonToggled();
+
+        styles ["circular"]
+      }
+
+      ToggleButton tueButton {
+        active: true;
+        // Translators: toggle for Tuesday
+        label: C_("Tuesday", "T");
+        tooltip-text: _("Tuesday");
+
+        toggled => $_onButtonToggled();
+
+        styles ["circular"]
+      }
+
+      ToggleButton wedButton {
+        active: true;
+        // Translators: toggle for Wednesday
+        label: C_("Wednesday", "W");
+        tooltip-text: _("Wednesday");
+
+        toggled => $_onButtonToggled();
+
+        styles ["circular"]
+      }
+
+      ToggleButton thuButton {
+        active: true;
+        // Translators: toggle for Thursday
+        label: C_("Thursday", "T");
+        tooltip-text: _("Thursday");
+
+        toggled => $_onButtonToggled();
+
+        styles ["circular"]
+      }
+
+      ToggleButton friButton {
+        active: true;
+        // Translators: toggle for Friday
+        label: C_("Friday", "F");
+        tooltip-text: _("Friday");
+
+        toggled => $_onButtonToggled();
+
+        styles ["circular"]
+      }
+
+      ToggleButton satButton {
+        active: true;
+        label: C_("Saturday", "S");
+        tooltip-text: _("Saturday");
+
+        toggled => $_onButtonToggled();
+
+        styles ["circular"]
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+_build
+build-aux
+data
+gi-types
+po
+src
+types

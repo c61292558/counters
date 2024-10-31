@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="counters">
+  <enum id="io.gitlab.guillermop.Counters.Sorting">
+    <value nick="a-z" value="0" />
+    <value nick="z-a" value="1" />
+    <value nick="oldest_first" value="2" />
+    <value nick="newest_first" value="3" />
+  </enum>
+  <schema id="@application_id@" path="/io/gitlab/guillermop/Counters/">
+    <key name="window-width" type="i">
+      <default>600</default>
+      <summary>Window width</summary>
+      <description>Default window width.</description>
+    </key>
+    <key name="window-height" type="i">
+      <default>540</default>
+      <summary>Window height</summary>
+      <description>Default window height.</description>
+    </key>
+    <key type="b" name="window-maximized">
+      <default>false</default>
+      <summary>Window maximized</summary>
+      <description>Default window maximized state.</description>
+    </key>
+    <key name="selected-category" type="s">
+      <default>"all"</default>
+      <summary>Selected category</summary>
+      <description>Last selected category.</description>
+    </key>
+    <key enum="io.gitlab.guillermop.Counters.Sorting" name="sort-order">
+      <default>"oldest_first"</default>
+      <summary>Sorting order</summary>
+      <description>Sorting order of the rows.</description>
+    </key>
+  </schema>
+</schemalist>

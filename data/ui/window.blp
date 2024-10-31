@@ -1,0 +1,18 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $Gjs_Window : Adw.ApplicationWindow {
+  default-width: 600;
+  default-height: 540;
+  width-request: 360;
+  height-request: 200;
+  notify::is-active => $_onIsActiveChanged();
+  close-request => $_onCloseRequest();
+
+  Adw.ToastOverlay overlay {
+    Adw.NavigationView navigationView {
+      $Gjs_MainPage mainPage {}
+      $Gjs_InnerPage innerPage { }
+    }
+  }
+}

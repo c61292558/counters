@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/gitlab/guillermop/Counters">
+    <file preprocess="xml-stripblanks">icons/scalable/status/check-round-outline2-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/status/trophy-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/status/fire2-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/status/graph-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/status/month-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/status/today-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/status/view-sort-descending-rtl-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/status/work-week-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/status/year-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">ui/days-row.ui</file>
+    <file preprocess="xml-stripblanks">ui/dialog.ui</file>
+    <file preprocess="xml-stripblanks">ui/history-card.ui</file>
+    <file preprocess="xml-stripblanks">ui/inner-page.ui</file>
+    <file preprocess="xml-stripblanks">ui/main-page.ui</file>
+    <file preprocess="xml-stripblanks">ui/preferences.ui</file>
+    <file preprocess="xml-stripblanks">ui/row.ui</file>
+    <file preprocess="xml-stripblanks">ui/window.ui</file>
+    <file alias="gtk/help-overlay.ui" preprocess="xml-stripblanks">ui/help-overlay.ui</file>
+    <file>style.css</file>
+  </gresource>
+</gresources>
