@@ -18,9 +18,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo add-apt-repository ppa:gnome3-team/gnome3  # 添加更新源
+          # sudo add-apt-repository ppa:gnome3-team/gnome3  # 添加更新源
           sudo apt-get update
-          sudo apt-get install -y ninja-build python3-pip valac libadwaita-1-dev pkg-config
+          sudo apt-get install -y ninja-build python3-pip valac libadwaita-1-dev pkg-config libadwaita-1-0
           pip3 install --upgrade meson
 
       - name: Configure project
